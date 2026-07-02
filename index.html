@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>GitSearch</title>
 </head>
-<body>
-    
+
+<body class="bg-sky-300">
+    <header>
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+            <div class="bg-white/60 backdrop-blur-md rounded-2xl p-16 shadow-xl text-center">
+
+                <h1 class="text-6xl font-bold text-slate-900">
+                    GitSearch
+                </h1>
+
+                <p class="mt-4 text-lg text-slate-800 font-medium">
+                    Encontre qualquer perfil do GitHub em segundos.
+                </p>
+
+                <p class="mt-3 max-w-3xl text-slate-700">
+                    Pesquise desenvolvedores, visualize informações públicas, repositórios,
+                    seguidores e muito mais através da API oficial do GitHub, tudo em uma interface simples e intuitiva.
+                </p>
+
+                <a href="#">
+                    <button
+                        class="mt-8 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition cursor-pointer">
+                        Pesquisar usuários
+                    </button>
+                </a>
+
+            </div>
+        </div>
+    </header>
 </body>
 </html>
