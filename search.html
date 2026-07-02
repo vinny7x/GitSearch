@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/favicon/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script type="module" src="js/search.js"></script>
+    <script src="js/components/site-footer.js"></script>
+    <title>GitSearch</title>
+</head>
+
+<body class="bg-sky-300">
+    <main>
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+            <div class="bg-white/60 backdrop-blur-md rounded-2xl p-16 shadow-xl text-center">
+                <h1 class="text-5xl font-bold text-slate-900">
+                    GitSearch | Pesquisa
+                </h1>
+                <form id="search-form" class="mt-4 flex flex-col">
+                    <label class="text-start" for="user">Usuário</label>
+                    <input required minlength="3" class="bg-white p-2 text-lg rounded-md" type="text" id="user" placeholder="Vinny7x">
+                    <button class="mt-2 p-2 bg-sky-400 rounded-md cursor-pointer text-white" type="submit">Procurar
+                        usuário
+
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div id="profile"></div>
+    </main>
+    <site-footer />
+</body>
+
+</html>
