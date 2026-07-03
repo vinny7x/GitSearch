@@ -1,0 +1,48 @@
+import { search } from "./services/github.js";
+
+const form = document.querySelector('#search-form');
+
+const profile = document.querySelector("#profile");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const user = document.querySelector("#user").value;
+
+    const data = await search(user);
+
+    if (data.message === "Not Found") {
+        profile.innerHTML = "<p>Usuário não encontrado.</p>";
+        return;
+    }
+    if (data?.message?.startsWith("API rate limit exceeded")) {
+        profile.innerHTML = "<p>Calma aí 😅 muitas buscas em sequência. Aguarde um momento e tente novamente.</p>";
+        return;
+    }
+
+    profile.innerHTML = `
+                 <div class="flex gap-4 bg-white/60 backdrop-blur-md rounded-2xl px-16 py-8 mt-4 shadow-xl">
+                <div>
+
+                    <img class="rounded-full w-32" src="${data.avatar_url}" alt="${data.login}">
+                    <p><strong>@</strong>${data.login}</p>
+                    <h2>${data.name}</h2>
+                    <p>${data.bio ?? "Sem biografia."}</p>
+                </div>
+                <div class="text-start">
+                    <p>👥 Seguidores: <strong>${data.followers}</strong></p>
+                    <p>➡️ Seguindo: <strong>${data.following}</strong></p>
+                    <p>📦 Repositórios: <strong>${data.public_repos}</strong></p>
+                    <p>📍 Localização: <strong>${data.location ?? "Não informada"}</strong></p>
+                    <p>🏢 Empresa: <strong>${data.company ?? "Não informada"}</strong></p>
+                    <p>🌐 Site: <strong>${data.blog || "Não informado"}</strong></p>
+                    <p>📅 Entrou em: <strong>${new Date(data.created_at).toLocaleDateString("pt-BR")}</strong></p>
+                    <a class="w-full flex justify-center mt-4 p-2 bg-sky-400 rounded-md cursor-pointer text-white" href="${data.html_url}"
+                        target="_blank">
+                        Ver perfil
+                    </a>
+                </div>
+
+            </div>
+    `;
+});
