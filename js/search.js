@@ -38,7 +38,7 @@ form.addEventListener("submit", async (e) => {
                     <p>🏢 Empresa: <strong>${data.company ?? "Não informada"}</strong></p>
                     <p>🌐 Site: <strong>${data.blog || "Não informado"}</strong></p>
                     <p>📅 Entrou em: <strong>${new Date(data.created_at).toLocaleDateString("pt-BR")}</strong></p>
-                    <a class="w-full flex justify-center mt-4 p-2 bg-sky-400 rounded-md cursor-pointer text-white"
+                    <a class="w-full flex justify-center mt-4 p-2 bg-orange-500 hover:bg-orange-400 transition rounded-md cursor-pointer text-white"
                         href="${data.html_url}" target="_blank">
                         Ver perfil
                     </a>

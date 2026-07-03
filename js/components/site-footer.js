@@ -46,22 +46,22 @@ class footer extends HTMLElement {
                 <p class="text-slate-300 mt-2 mb-4">
                     Tem alguma dúvida ou sugestão? Envie uma mensagem.
                 </p>
+                    <form class="flex flex-col gap-4">
+                        <input required type="text" id="name" placeholder="Seu nome"
+                            class="rounded-md bg-sky-100 text-slate-700 p-2">
 
-                <form class="flex flex-col gap-3">
-                    <input required type="text" id="name" placeholder="Seu nome"
-                        class="rounded-md bg-sky-100 text-slate-700 p-2">
+                        <input required type="email" id="email" placeholder="Seu e-mail"
+                            class="rounded-md bg-sky-100 text-slate-700 p-2">
 
-                    <input required type="email" id="email" placeholder="Seu e-mail"
-                        class="rounded-md bg-sky-100 text-slate-700 p-2">
+                        <textarea required id="message" placeholder="Sua mensagem"
+                            class="rounded-md bg-sky-100 text-slate-700 p-2 h-24 resize-none"></textarea>
 
-                    <textarea required id="message" placeholder="Sua mensagem"
-                        class="rounded-md bg-sky-100 text-slate-700 p-2 h-24 resize-none"></textarea>
-
-                    <button type="submit"
-                        class="bg-sky-500 hover:bg-sky-600 text-white rounded-md p-2 transition cursor-pointer">
-                        Enviar
-                    </button>
-                </form>
+                        <button type="submit"
+                            class="bg-orange-500 hover:bg-orange-400 text-white rounded-md p-2 transition cursor-pointer">
+                            Enviar
+                        </button>
+                    </form>
+                
             </div>
 
         </div>
