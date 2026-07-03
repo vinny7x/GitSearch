@@ -14,9 +14,10 @@
 
 <body class="bg-sky-300">
     <main>
-        <div class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-            <div class="bg-white/60 backdrop-blur-md rounded-2xl p-16 shadow-xl text-center">
-                <h1 class="text-5xl font-bold text-slate-900">
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-8 md:px-16">
+            <div
+                class="bg-white/60 backdrop-blur-md rounded-2xl p-8 md:p-16 shadow-xl text-center mx-4 max-w-2xl">
+                <h1 class="md:text-5xl text-3xl font-bold text-slate-900">
                     GitSearch | Pesquisa
                 </h1>
                 <form id="search-form" class="mt-4 flex flex-col">
@@ -29,10 +30,10 @@
                     </button>
                 </form>
             </div>
-            <div id="profile"></div>
+            <div class="flex items-center" id="profile"></div>
         </div>
     </main>
-    <site-footer />
+    <site-footer></site-footer>
 </body>
 
 </html>

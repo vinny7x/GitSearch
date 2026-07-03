@@ -21,13 +21,14 @@ form.addEventListener("submit", async (e) => {
     }
 
     profile.innerHTML = `
-                 <div class="flex gap-4 bg-white/60 backdrop-blur-md rounded-2xl px-16 py-8 mt-4 shadow-xl">
-                <div>
+                 <div
+                class="bg-white/60 backdrop-blur-md rounded-2xl p-8 md:p-16 shadow-xl mx-4 w-full max-w-2xl flex flex-col md:flex-row gap-6 m-4">
+                <div class="flex flex-col items-center">
 
-                    <img class="rounded-full w-32" src="${data.avatar_url}" alt="${data.login}">
+                    <img class="rounded-full w-24 md:w-32" src="${data.avatar_url}" alt="${data.login}">
                     <p><strong>@</strong>${data.login}</p>
                     <h2>${data.name}</h2>
-                    <p>${data.bio ?? "Sem biografia."}</p>
+                    <p class="break-words">${data.bio ?? "Sem biografia."}</p>
                 </div>
                 <div class="text-start">
                     <p>👥 Seguidores: <strong>${data.followers}</strong></p>
@@ -37,8 +38,8 @@ form.addEventListener("submit", async (e) => {
                     <p>🏢 Empresa: <strong>${data.company ?? "Não informada"}</strong></p>
                     <p>🌐 Site: <strong>${data.blog || "Não informado"}</strong></p>
                     <p>📅 Entrou em: <strong>${new Date(data.created_at).toLocaleDateString("pt-BR")}</strong></p>
-                    <a class="w-full flex justify-center mt-4 p-2 bg-sky-400 rounded-md cursor-pointer text-white" href="${data.html_url}"
-                        target="_blank">
+                    <a class="w-full flex justify-center mt-4 p-2 bg-sky-400 rounded-md cursor-pointer text-white"
+                        href="${data.html_url}" target="_blank">
                         Ver perfil
                     </a>
                 </div>
