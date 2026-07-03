@@ -1,8 +1,8 @@
 class footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <footer class="bg-slate-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start gap-8">
+      <footer class="bg-slate-900 text-white p-8">
+        <div class="mx-auto px-6 flex flex-col md:flex-row items-start gap-8">
 
             <div class="flex-1">
                 <h2 class="text-xl font-bold">GitSearch</h2>
